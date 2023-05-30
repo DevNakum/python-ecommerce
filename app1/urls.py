@@ -14,5 +14,11 @@ urlpatterns = [
     path('poduct-get/<int:id>/',singleproduct,name='productget1'),
     path('change-password',changepass,name='change'),
     path('contact-us',contact,name='contact'),
-    path('profile',profile,name='profile1')
+    path('profile/',profile,name='profile1'),
+    path('myorder/',myOrder,name='myOrder1'),
+    path('buy-now/',buynow,name='buy'),
+    path('razorpayView/',razorpayView,name='razorpayView'),
+    path('paymenthandler/',paymenthandler,name='paymenthandler'),
+    path('successview/',successview,name="orderSuccessView")
+ 
 ]

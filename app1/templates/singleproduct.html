@@ -19,11 +19,21 @@
                             <h5 class="mb-0" style="align-self:center;">{{data.name}}</h5>
                             <h5 class="mb-0" style="align-self:center;">{{data.description}}</h5>
                             <h5 class="mb-0" style="align-self:center;">₹ {{data.price}}</h5>
+                            
                         </div>
                     </div>
-                  <button>Buy Now</button>
+                    
             </div>
-
+            {% if data.quantity > 0 %}
+            <form method='POST' action="{% url 'buy' %}">
+                {% csrf_token %}
+                <input type="number" placeholder="Enter the quantity" name='qty1'>
+                <input type="hidden" value="{{data.id}}" name='id'>
+                <button type="submit">Buy Now</button>
+            </form>
+            {% else %}
+            <p>Out of Stock</p>
+            {% endif %}
         </div>
        
     </section>
